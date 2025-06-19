@@ -1,0 +1,67 @@
+//--------------------Components------------------------------------
+// Class Component
+class Car extends React.Component {
+    render() {
+        return (<h2>Hi, I am a Car!</h2>)
+    }
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Car />
+  </React.StrictMode>
+);
+
+// Function Component
+function Car() {
+    return <h2>Hi, I am a Car!</h2>
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Car />
+  </React.StrictMode>
+);
+
+
+
+//-------------Props--------------------------------
+
+// props in function Component
+function Car (props) {
+    return <h1>I am a {props.color} Car</h1>
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <Car color="red" />
+)
+
+// props in Class Component
+class Car extends React.Component{
+    render() {
+        return <h1>Hey Look it's {this.props.color} Car</h1>
+    }
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <Car color="red" />
+)
+
+//-------------Components in file-----------------
+example:-
+1. This is the new file, we named it "Car.js":
+
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+export default Car;
+
+2. Now we import the "Car.js" file in the application, and we can use the Car component as if it was created here.
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Car from './Car.js';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);

@@ -1,0 +1,34 @@
+//------------basic way to render a page-------------------------------------
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
+
+//------------one way to exicute-------------------------------------
+const text = "jsx";
+
+const myElement = React.createElement('h1', {
+    id: 'my-heading',
+    className: 'text-3xl font-bold',
+    style: { color: 'blue', textAlign: 'center' },
+    title: 'This is a heading',
+    onClick: () => alert('Heading clicked!')
+}, `I do not use ${text}`);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement)
+reportWebVitals();
+
+// Just an example:
+const x = 5;
+
+const myElement = <h1>{ x < 10 ? "hello": "Goodbye"}</h1>
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(myElement)
+
+

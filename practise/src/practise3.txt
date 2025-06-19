@@ -1,0 +1,47 @@
+// class Component Constructor:
+example: create a constructor function in the Car components, and add a color
+property:
+
+Car.js:-
+import React from 'react';
+
+class Car extends React.Component {
+    constructor() {
+        super();
+        this.state = {color: "red"}
+    }
+    render() {
+        return (<h2>I am a {this.state.color} Car!</h2>)
+    }
+}
+
+export default Car;
+
+index.js:-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Car from './Car';
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+    <Car />
+)
+
+
+//-------------Props in the Custructor-------------------
+If your component has a constructor function, the props should always be passed to 
+the constructor and also to the React.Component via the super() method.
+
+Example:
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h2>I am a {this.props.model}!</h2>;
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car model="Mustang"/>);
